@@ -48,7 +48,7 @@ public class DBCreator {
 
 	    String createStopTable = "CREATE TABLE stopTable (" +
 	    	"_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-	    	"_favorites BOOLEAN," +
+	    	"_favorite BOOLEAN," +
 	    	"_stop VARCHAR(15) UNIQUE," +
 	    	"_name VARCHAR(50)," +
 	    	"_latitude INTEGER," +
@@ -79,7 +79,7 @@ public class DBCreator {
 		// insert data
 	    double million = 1000000; // lat/lon are stored in db as E6
 	    String insertString = "REPLACE INTO stopTable " +
-	    	"(_stop, _name, _latitude, _longitude, _favorites) VALUES " +
+	    	"(_stop, _name, _latitude, _longitude, _favorite) VALUES " +
 	    	"(?, ?, ?, ?, ?)";
 	    
 	    PreparedStatement insertStop = conn.prepareStatement(insertString);
